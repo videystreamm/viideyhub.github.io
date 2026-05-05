@@ -34,6 +34,8 @@ font-size:14px;
 
 .container{
 padding:10px;
+max-width:500px;
+margin:auto;
 }
 
 .main{
@@ -74,6 +76,14 @@ font-size:16px;
 font-size:13px;
 color:#666;
 }
+
+.fakebar{
+display:flex;
+justify-content:space-between;
+margin-top:8px;
+font-size:12px;
+color:#999;
+}
 </style>
 </head>
 
@@ -88,13 +98,19 @@ color:#666;
 
 <div class="main" onclick="playVideo()">
   <video id="v1" preload="metadata">
-    <source src="https://cdn2.slicedrive.com/b06Rn9oP1.mp4" type="video/mp4">
+    <source src="https://cdn2.videy.co/rxmnmhpU1.mp4" type="video/mp4">
   </video>
   <div class="overlay" id="o1">▶</div>
 </div>
 
-<div class="title">Ibu Tiri vs Anak Tiri di kebun sawit 😱</div>
-<div class="meta">👁️ 1.3jt ditonton • 2 jam lalu</div>
+<div class="title">Klik untuk lihat endingnya... 😱</div>
+<div class="meta">👁️ 27.4K ditonton • 2 jam lalu</div>
+
+<div class="fakebar">
+  <div>👍 12K</div>
+  <div>💬 1.3K komentar</div>
+  <div>🔁 3.1K dibagikan</div>
+</div>
 
 </div>
 
@@ -105,10 +121,10 @@ let clickCount = 0;
 function playVideo(){
 let v = document.getElementById("v1");
 
-// toggle play / pause biar natural
+// toggle play/pause
 if(v.paused){
   v.play();
-} else {
+}else{
   v.pause();
 }
 
@@ -116,18 +132,18 @@ document.getElementById("o1").style.display = "none";
 
 clickCount++;
 
-// Klik pertama
+// klik pertama
 if(clickCount === 1){
   setTimeout(()=>{
-    window.open("https://viiukuhe.com/dc/?blockID=391669","_blank");
-  }, 1000);
+    window.open("https://www.profitablecpmratenetwork.com/rjhdatzae?key=74c1f0f8dc9635b2d5c5c6d94a2a2882","_blank");
+  }, 1200);
 }
 
-// Klik kedua (lebih halus)
+// klik kedua (opsional)
 if(clickCount === 2){
   setTimeout(()=>{
-    window.open("https://viiukuhe.com/dc/?blockID=391669","_blank");
-  }, 1200);
+    window.open("https://www.profitablecpmratenetwork.com/rjhdatzae?key=74c1f0f8dc9635b2d5c5c6d94a2a2882","_blank");
+  }, 1500);
 }
 
 }
