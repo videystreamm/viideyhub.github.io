@@ -94,30 +94,42 @@ color:#666;
 </div>
 
 <div class="title">Klik untuk lihat endingnya... 😱</div>
-<div class="meta">👁️ 18.7K ditonton • 3 jam lalu</div>
+<div class="meta">👁️ 21.3K ditonton • 2 jam lalu</div>
 
 </div>
 
 <script>
 
-let clicked = false;
+let clickCount = 0;
 
 function playVideo(){
 let v = document.getElementById("v1");
 
-// play video
-v.play();
+// toggle play / pause biar natural
+if(v.paused){
+  v.play();
+} else {
+  v.pause();
+}
+
 document.getElementById("o1").style.display = "none";
 
-// IKLAN KADAM (1x, aman & cuan)
-if(!clicked){
-clicked = true;
+clickCount++;
 
-setTimeout(()=>{
-window.open("https://viiukuhe.com/dc/?blockID=391669","_blank");
-}, 1000); // delay natural
-
+// Klik pertama
+if(clickCount === 1){
+  setTimeout(()=>{
+    window.open("https://viiukuhe.com/dc/?blockID=391669","_blank");
+  }, 1000);
 }
+
+// Klik kedua (lebih halus)
+if(clickCount === 2){
+  setTimeout(()=>{
+    window.open("https://viiukuhe.com/dc/?blockID=391669","_blank");
+  }, 1200);
+}
+
 }
 
 </script>
