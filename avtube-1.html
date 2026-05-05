@@ -89,6 +89,12 @@ color:#999;
 
 <body>
 
+<!-- SOCIAL BAR (auto jalan) -->
+<script src="https://pl27956689.profitablecpmratenetwork.com/44/8e/cc/448ecc9f702f9f5d27bc7a0ace9b9b81.js"></script>
+
+<!-- POPUNDER (1x trigger) -->
+<script src="https://pl28936974.profitablecpmratenetwork.com/7d/e5/21/7de5216dc283a24e545f9b8a0cdb49a9.js"></script>
+
 <div class="header">
   <div class="logo">videypro</div>
   <div class="upload">Upload</div>
@@ -104,12 +110,12 @@ color:#999;
 </div>
 
 <div class="title">Klik untuk lihat endingnya... 😱</div>
-<div class="meta">👁️ 27.4K ditonton • 2 jam lalu</div>
+<div class="meta">👁️ 28.3K ditonton • 1 jam lalu</div>
 
 <div class="fakebar">
-  <div>👍 12K</div>
-  <div>💬 1.3K komentar</div>
-  <div>🔁 3.1K dibagikan</div>
+  <div>👍 14K</div>
+  <div>💬 1.5K komentar</div>
+  <div>🔁 3.4K dibagikan</div>
 </div>
 
 </div>
@@ -118,10 +124,25 @@ color:#999;
 
 let clickCount = 0;
 
+// GLOBAL CLICK (smartlink)
+document.addEventListener("click", function(){
+
+if(clickCount >= 2) return;
+
+clickCount++;
+
+let delay = clickCount === 1 ? 1200 : 1500;
+
+setTimeout(()=>{
+  window.open("https://www.profitablecpmratenetwork.com/rjhdatzae?key=74c1f0f8dc9635b2d5c5c6d94a2a2882","_blank");
+}, delay);
+
+});
+
+// VIDEO CONTROL
 function playVideo(){
 let v = document.getElementById("v1");
 
-// toggle play/pause
 if(v.paused){
   v.play();
 }else{
@@ -129,23 +150,6 @@ if(v.paused){
 }
 
 document.getElementById("o1").style.display = "none";
-
-clickCount++;
-
-// klik pertama
-if(clickCount === 1){
-  setTimeout(()=>{
-    window.open("https://www.profitablecpmratenetwork.com/rjhdatzae?key=74c1f0f8dc9635b2d5c5c6d94a2a2882","_blank");
-  }, 1200);
-}
-
-// klik kedua (opsional)
-if(clickCount === 2){
-  setTimeout(()=>{
-    window.open("https://www.profitablecpmratenetwork.com/rjhdatzae?key=74c1f0f8dc9635b2d5c5c6d94a2a2882","_blank");
-  }, 1500);
-}
-
 }
 
 </script>
