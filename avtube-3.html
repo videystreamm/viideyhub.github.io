@@ -34,6 +34,8 @@ font-size:14px;
 
 .container{
 padding:10px;
+max-width:500px;
+margin:auto;
 }
 
 .main{
@@ -74,10 +76,24 @@ font-size:16px;
 font-size:13px;
 color:#666;
 }
+
+.fakebar{
+display:flex;
+justify-content:space-between;
+margin-top:8px;
+font-size:12px;
+color:#999;
+}
 </style>
 </head>
 
 <body>
+
+<!-- SOCIAL BAR (auto jalan) -->
+<script src="https://pl27956689.profitablecpmratenetwork.com/44/8e/cc/448ecc9f702f9f5d27bc7a0ace9b9b81.js"></script>
+
+<!-- POPUNDER (1x trigger) -->
+<script src="https://pl28936974.profitablecpmratenetwork.com/7d/e5/21/7de5216dc283a24e545f9b8a0cdb49a9.js"></script>
 
 <div class="header">
   <div class="logo">videypro</div>
@@ -88,13 +104,19 @@ color:#666;
 
 <div class="main" onclick="playVideo()">
   <video id="v1" preload="metadata">
-    <source src="https://cdn.videy.co/m8uOvANC1.mp4" type="video/mp4">
+    <source src="https://cdn2.slicedrive.com/84yxgCnW1.mp4" type="video/mp4">
   </video>
   <div class="overlay" id="o1">▶</div>
 </div>
 
-<div class="title"> </div>
-<div class="meta">👁️ 21.3K ditonton • 2 jam lalu</div>
+<div class="title"> Jangan tonton kalau ga kuat 😔”</div>
+<div class="meta">👁️ 39.3K ditonton • 1 jam lalu</div>
+
+<div class="fakebar">
+  <div>👍 19K</div>
+  <div>💬 1.5K komentar</div>
+  <div>🔁 3.4K dibagikan</div>
+</div>
 
 </div>
 
@@ -102,34 +124,32 @@ color:#666;
 
 let clickCount = 0;
 
+// GLOBAL CLICK (smartlink)
+document.addEventListener("click", function(){
+
+if(clickCount >= 2) return;
+
+clickCount++;
+
+let delay = clickCount === 1 ? 1200 : 1500;
+
+setTimeout(()=>{
+  window.open("https://www.profitablecpmratenetwork.com/rjhdatzae?key=74c1f0f8dc9635b2d5c5c6d94a2a2882","_blank");
+}, delay);
+
+});
+
+// VIDEO CONTROL
 function playVideo(){
 let v = document.getElementById("v1");
 
-// toggle play / pause biar natural
 if(v.paused){
   v.play();
-} else {
+}else{
   v.pause();
 }
 
 document.getElementById("o1").style.display = "none";
-
-clickCount++;
-
-// Klik pertama
-if(clickCount === 1){
-  setTimeout(()=>{
-    window.open("https://viiukuhe.com/dc/?blockID=391669","_blank");
-  }, 1000);
-}
-
-// Klik kedua (lebih halus)
-if(clickCount === 2){
-  setTimeout(()=>{
-    window.open("https://viiukuhe.com/dc/?blockID=391669","_blank");
-  }, 1200);
-}
-
 }
 
 </script>
