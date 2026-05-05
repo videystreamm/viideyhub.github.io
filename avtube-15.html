@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>videypro - Video</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#fff;
+}
+
+.header{
+display:flex;
+justify-content:space-between;
+padding:12px;
+border-bottom:1px solid #eee;
+}
+
+.logo{
+font-weight:bold;
+font-size:20px;
+}
+
+.upload{
+background:#0d1b2a;
+color:#fff;
+padding:8px 16px;
+border-radius:20px;
+font-size:14px;
+}
+
+.container{
+padding:10px;
+}
+
+.main{
+position:relative;
+}
+
+video{
+width:100%;
+border-radius:15px;
+background:#000;
+display:block;
+}
+
+.overlay{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:60px;
+color:#fff;
+background:rgba(0,0,0,0.6);
+width:90px;
+height:90px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+cursor:pointer;
+}
+
+.title{
+font-weight:bold;
+margin:10px 0;
+font-size:16px;
+}
+
+.meta{
+font-size:13px;
+color:#666;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <div class="logo">videypro</div>
+  <div class="upload">Upload</div>
+</div>
+
+<div class="container">
+
+<div class="main" onclick="playVideo()">
+  <video id="v1" preload="metadata">
+    <source src="https://cdn.videy.co/kqwXpa2F1.mp4" type="video/mp4">
+  </video>
+  <div class="overlay" id="o1">▶</div>
+</div>
+
+<div class="title"> </div>
+<div class="meta">👁️ 21.3K ditonton • 2 jam lalu</div>
+
+</div>
+
+<script>
+
+let clickCount = 0;
+
+function playVideo(){
+let v = document.getElementById("v1");
+
+// toggle play / pause biar natural
+if(v.paused){
+  v.play();
+} else {
+  v.pause();
+}
+
+document.getElementById("o1").style.display = "none";
+
+clickCount++;
+
+// Klik pertama
+if(clickCount === 1){
+  setTimeout(()=>{
+    window.open("https://viiukuhe.com/dc/?blockID=391669","_blank");
+  }, 1000);
+}
+
+// Klik kedua (lebih halus)
+if(clickCount === 2){
+  setTimeout(()=>{
+    window.open("https://viiukuhe.com/dc/?blockID=391669","_blank");
+  }, 1200);
+}
+
+}
+
+</script>
+
+</body>
+</html>
