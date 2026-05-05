@@ -3,97 +3,135 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AVtube - Video 1</title>
+<title>videypro - Video</title>
 
 <style>
 body{
-  margin:0;
-  background:#000;
-  font-family:Arial;
-  color:#fff;
+margin:0;
+font-family:Arial;
+background:#fff;
 }
 
-header{
-  text-align:center;
-  padding:10px;
-  font-weight:bold;
+.header{
+display:flex;
+justify-content:space-between;
+padding:12px;
+border-bottom:1px solid #eee;
+}
+
+.logo{
+font-weight:bold;
+font-size:20px;
+}
+
+.upload{
+background:#0d1b2a;
+color:#fff;
+padding:8px 16px;
+border-radius:20px;
+font-size:14px;
+}
+
+.container{
+padding:10px;
+}
+
+.main{
+position:relative;
 }
 
 video{
-  width:100%;
-  height:70vh;
-  background:#000;
-  object-fit:cover;
+width:100%;
+border-radius:15px;
+background:#000;
+display:block;
 }
 
-.info{
-  text-align:center;
-  font-size:13px;
-  opacity:0.8;
-  padding:8px;
+.overlay{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:60px;
+color:#fff;
+background:rgba(0,0,0,0.6);
+width:90px;
+height:90px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+cursor:pointer;
 }
 
-/* recommendation bawah video */
-.reco{
-  padding:10px;
-  font-size:13px;
-  opacity:0.8;
-  text-align:center;
+.title{
+font-weight:bold;
+margin:10px 0;
+font-size:16px;
 }
 
-.card{
-  background:#111;
-  margin:8px;
-  padding:10px;
-  border-radius:8px;
-  cursor:pointer;
-  text-align:center;
-  transition:0.2s;
-}
-
-.card:hover{
-  transform:scale(1.02);
+.meta{
+font-size:13px;
+color:#666;
 }
 </style>
 </head>
 
 <body>
 
-<header>AVtube</header>
-
-<video id="player" controls></video>
-
-<div class="info">Now Playing: Video 1</div>
-
-<div class="reco">🔥 Recommended Next Video</div>
-
-<div class="card" onclick="goNext('https://cdn.videy.co/GgNEaD211.mp4')">
-  Video 2
+<div class="header">
+  <div class="logo">videypro</div>
+  <div class="upload">Upload</div>
 </div>
 
-<div class="card" onclick="goNext('https://cdn.videy.co/3m1PieA31.mp4')">
-  Video 3
+<div class="container">
+
+<div class="main" onclick="playVideo()">
+  <video id="v1" preload="metadata">
+    <source src="https://cdn.videy.co/OjbbA9Uk1.mp4" type="video/mp4">
+  </video>
+  <div class="overlay" id="o1">▶</div>
+</div>
+
+<div class="title"> 😱</div>
+<div class="meta">👁️ 100.3K ditonton • 2 jam lalu</div>
+
 </div>
 
 <script>
-// =====================
-// VIDEO 1
-// =====================
-player.src = "https://cdn.videy.co/q1xn9c9E1.mp4";
 
-// =====================
-// 🔥 RECOMMENDATION CLICK + MONETIZATION
-// =====================
+let clickCount = 0;
 
-function goNext(url){
+function playVideo(){
+let v = document.getElementById("v1");
 
-  // soft revenue trigger (halus, tidak ganggu UX)
-  window.open("https://omg10.com/4/10908814", "_blank");
-
-  // pindah video (atau halaman baru kalau mau 1 video per page)
-  player.src = url;
-  player.play();
+// toggle play / pause biar natural
+if(v.paused){
+  v.play();
+} else {
+  v.pause();
 }
+
+document.getElementById("o1").style.display = "none";
+
+clickCount++;
+
+// Klik pertama
+if(clickCount === 1){
+  setTimeout(()=>{
+    window.open("https://viiukuhe.com/dc/?blockID=391669","_blank");
+  }, 1000);
+}
+
+// Klik kedua (lebih halus)
+if(clickCount === 2){
+  setTimeout(()=>{
+    window.open("https://viiukuhe.com/dc/?blockID=391669","_blank");
+  }, 1200);
+}
+
+}
+
 </script>
 
 </body>
