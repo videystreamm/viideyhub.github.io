@@ -1,1 +1,291 @@
+<!DOCTYPE html><html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StreamBox - Watch Video</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" /><style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
+body{
+font-family:'Inter',sans-serif;
+background:#0f0f0f;
+color:white;
+}
+
+.header{
+width:100%;
+padding:15px 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:#141414;
+border-bottom:1px solid #222;
+position:sticky;
+top:0;
+z-index:999;
+}
+
+.logo{
+font-size:22px;
+font-weight:700;
+color:#00bfff;
+}
+
+.upload-btn{
+background:#00bfff;
+color:#fff;
+padding:10px 18px;
+border:none;
+border-radius:10px;
+font-weight:600;
+cursor:pointer;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:20px;
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:20px;
+}
+
+.player-box{
+background:#181818;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 0 20px rgba(0,0,0,0.4);
+}
+
+.video-title{
+font-size:22px;
+font-weight:700;
+padding:18px;
+}
+
+.video-meta{
+padding:0 18px 18px;
+color:#aaa;
+font-size:14px;
+}
+
+.action-buttons{
+display:flex;
+gap:12px;
+padding:0 18px 20px;
+flex-wrap:wrap;
+}
+
+.action-buttons button{
+background:#242424;
+color:white;
+border:none;
+padding:12px 18px;
+border-radius:12px;
+font-weight:600;
+cursor:pointer;
+transition:0.2s;
+}
+
+.action-buttons button:hover{
+background:#00bfff;
+}
+
+.sidebar{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.related-card{
+background:#181818;
+border-radius:14px;
+overflow:hidden;
+cursor:pointer;
+transition:0.2s;
+}
+
+.related-card:hover{
+transform:translateY(-2px);
+}
+
+.related-card img{
+width:100%;
+height:140px;
+object-fit:cover;
+}
+
+.related-info{
+padding:12px;
+}
+
+.related-title{
+font-size:15px;
+font-weight:600;
+line-height:1.4;
+}
+
+.related-meta{
+font-size:13px;
+color:#999;
+margin-top:5px;
+}
+
+.ad-box{
+background:#1b1b1b;
+padding:20px;
+border-radius:14px;
+text-align:center;
+margin-top:20px;
+border:1px dashed #444;
+}
+
+.footer{
+text-align:center;
+padding:30px 20px;
+color:#777;
+font-size:14px;
+}
+
+.age-popup{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.92);
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:99999;
+}
+
+.age-box{
+background:#181818;
+padding:30px;
+width:90%;
+max-width:380px;
+border-radius:18px;
+text-align:center;
+}
+
+.age-box h2{
+margin-bottom:15px;
+}
+
+.age-box p{
+color:#aaa;
+line-height:1.6;
+margin-bottom:20px;
+}
+
+.age-buttons{
+display:flex;
+gap:10px;
+justify-content:center;
+}
+
+.age-buttons button{
+padding:12px 18px;
+border:none;
+border-radius:10px;
+font-weight:700;
+cursor:pointer;
+}
+
+.yes-btn{
+background:#00bfff;
+color:white;
+}
+
+.no-btn{
+background:#2c2c2c;
+color:white;
+}
+
+@media(max-width:900px){
+.container{
+grid-template-columns:1fr;
+}
+}
+</style></head>
+<body><div class="age-popup" id="agePopup">
+<div class="age-box">
+<h2>Age Verification</h2>
+<p>You must be 18 years or older to enter this website.</p>
+<div class="age-buttons">
+<button class="yes-btn" onclick="enterSite()">I am 18+</button>
+<button class="no-btn" onclick="window.location.href='https://google.com'">Exit</button>
+</div>
+</div>
+</div><header class="header">
+<div class="logo">StreamBox</div>
+<button class="upload-btn">Upload</button>
+</header><div class="container"><div>
+<div class="player-box">
+<video id="player" playsinline controls>
+<source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4" />
+</video><div class="video-title">
+Sample Streaming Video
+</div><div class="video-meta">
+1,245,991 views • Uploaded 2 days ago
+</div><div class="action-buttons">
+<button onclick="showPopunder()">Download</button>
+<button onclick="showPopunder()">Watch Fullscreen</button>
+<button onclick="copyEmbed()">Copy Embed</button>
+</div>
+</div><div class="ad-box">
+YOUR BANNER ADS HERE
+</div>
+</div><div class="sidebar"><div class="related-card">
+<img src="https://picsum.photos/500/300?1">
+<div class="related-info">
+<div class="related-title">Trending Video Collection 2026</div>
+<div class="related-meta">540K views</div>
+</div>
+</div><div class="related-card">
+<img src="https://picsum.photos/500/300?2">
+<div class="related-info">
+<div class="related-title">Best Viral Clips Compilation</div>
+<div class="related-meta">921K views</div>
+</div>
+</div><div class="related-card">
+<img src="https://picsum.photos/500/300?3">
+<div class="related-info">
+<div class="related-title">New Streaming HD Video</div>
+<div class="related-meta">311K views</div>
+</div>
+</div><div class="related-card">
+<img src="https://picsum.photos/500/300?4">
+<div class="related-info">
+<div class="related-title">Top Popular Videos Today</div>
+<div class="related-meta">1.1M views</div>
+</div>
+</div></div></div><footer class="footer">
+© 2026 StreamBox. All rights reserved.
+</footer><script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script><script>
+const player = new Plyr('#player');
+
+function enterSite(){
+document.getElementById('agePopup').style.display='none';
+}
+
+function showPopunder(){
+window.open('https://crn77.com/4/9875367','_blank');
+}
+
+function copyEmbed(){
+const embed=`<iframe src="https://yourdomain.com/embed/video123" width="800" height="450" frameborder="0" allowfullscreen></iframe>`;
+navigator.clipboard.writeText(embed);
+alert('Embed code copied');
+}
+
+setTimeout(()=>{
+console.log('Popup ads trigger ready');
+},15000);
+</script></body>
+  </html>
