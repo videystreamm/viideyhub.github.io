@@ -72,6 +72,7 @@ padding:20px;
 border-radius:15px;
 margin-bottom:25px;
 text-align:center;
+overflow:hidden;
 }
 
 footer{
@@ -133,14 +134,25 @@ color:white;
 background:#333;
 color:white;
 }
+
+/* SINGLE BANNER ONLY */
+#single-banner iframe,
+#single-banner .ad-item:nth-child(n+2),
+#single-banner > div > *:nth-child(n+2){
+display:none !important;
+}
 </style>
 </head>
 <body>
 
 <div class="age-popup" id="agePopup">
 <div class="age-box">
+
 <h2>Age Verification</h2>
-<p>You must be 18 years or older to enter this website.</p>
+
+<p>
+You must be 18 years or older to enter this website.
+</p>
 
 <div class="age-buttons">
 <button class="enter-btn" onclick="enterSite()">I am 18+</button>
@@ -174,10 +186,12 @@ Trending Viral Video #1
 
 </div>
 
-<!-- NATIVE BANNER -->
-<div class="ad-box">
+<!-- SINGLE BANNER -->
+<div class="ad-box" id="single-banner">
 
-<script async="async" data-cfasync="false" src="https://pl29443551.profitablecpmratenetwork.com/fc59100c547ea64fc6a58db887f6dce5/invoke.js"></script>
+<script async="async" data-cfasync="false"
+src="https://pl29443551.profitablecpmratenetwork.com/fc59100c547ea64fc6a58db887f6dce5/invoke.js"></script>
+
 <div id="container-fc59100c547ea64fc6a58db887f6dce5"></div>
 
 </div>
@@ -224,7 +238,7 @@ Trending Viral Video #3
 © 2026 StreamBox - All Rights Reserved
 </footer>
 
-<!-- PLYR -->
+<!-- PLAYER -->
 <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
 
 <script>
@@ -235,7 +249,10 @@ document.getElementById('agePopup').style.display='none';
 }
 
 function downloadLink(){
-window.open('https://www.profitablecpmratenetwork.com/m69qqfwyc?key=858df2f993de7184727c99b3f278b9a1','_blank');
+window.open(
+'https://www.profitablecpmratenetwork.com/m69qqfwyc?key=858df2f993de7184727c99b3f278b9a1',
+'_blank'
+);
 }
 </script>
 
