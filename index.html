@@ -3,269 +3,149 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StreamBox - Tonton Video</title>
-
-<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css"/>
+<title>Stream Hub</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
 body{
-background:#0f0f0f;
-font-family:Arial,sans-serif;
+margin:0;
+font-family:Arial;
+background:#0b0b0b;
 color:white;
 }
 
 header{
-padding:15px;
-background:#181818;
-font-size:22px;
-font-weight:bold;
+background:#111;
+padding:12px;
 text-align:center;
-border-bottom:1px solid #222;
+font-weight:bold;
 }
 
+/* VIDEO */
 .container{
-max-width:900px;
-margin:auto;
-padding:15px;
+padding:10px;
 }
 
-.video-box{
-background:#181818;
-border-radius:15px;
-overflow:hidden;
-margin-bottom:25px;
-box-shadow:0 0 15px rgba(0,0,0,0.3);
-}
-
-.video-title{
-padding:15px;
-font-size:18px;
-font-weight:bold;
-}
-
-.video-meta{
-padding:0 15px 15px;
-color:#aaa;
-font-size:14px;
-}
-
-.ad-box{
-background:#1b1b1b;
-padding:15px;
-border-radius:15px;
-margin-bottom:25px;
-text-align:center;
-overflow:hidden;
-}
-
-footer{
-text-align:center;
-padding:30px;
-color:#777;
-font-size:14px;
-}
-
-.age-popup{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,0.95);
-display:flex;
-align-items:center;
-justify-content:center;
-z-index:9999;
-}
-
-.age-box{
-background:#181818;
-padding:30px;
-width:90%;
-max-width:350px;
-border-radius:15px;
-text-align:center;
-}
-
-.age-box h2{
-margin-bottom:15px;
-}
-
-.age-box p{
-color:#aaa;
-line-height:1.5;
-margin-bottom:20px;
-}
-
-.age-buttons{
-display:flex;
-gap:10px;
-justify-content:center;
-}
-
-.age-buttons button{
-padding:12px 18px;
-border:none;
+video{
+width:100%;
 border-radius:10px;
+background:black;
+}
+
+/* BUTTON */
+.btn{
+display:block;
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:6px;
+background:#e50914;
+color:white;
 font-weight:bold;
 cursor:pointer;
 }
 
-.enter-btn{
-background:#00bfff;
-color:white;
+/* LIST */
+.list{
+margin-top:15px;
+display:flex;
+flex-direction:column;
+gap:8px;
 }
 
-.exit-btn{
-background:#333;
-color:white;
+.item{
+background:#1a1a1a;
+padding:10px;
+border-radius:8px;
+cursor:pointer;
+font-size:13px;
+}
+
+/* ADS SLOT */
+.adbox{
+background:#1a1a1a;
+padding:10px;
+margin-top:10px;
+border-radius:8px;
+text-align:center;
+color:#aaa;
+font-size:12px;
 }
 </style>
 </head>
+
 <body>
 
-<?php
-$file = 'views.txt';
-
-if(!file_exists($file)){
-file_put_contents($file, 0);
-}
-
-$views = (int)file_get_contents($file);
-$views++;
-
-file_put_contents($file, $views);
-?>
-
-<div class="age-popup" id="agePopup">
-<div class="age-box">
-
-<h2>Verifikasi Umur</h2>
-
-<p>
-Anda harus berusia 18 tahun atau lebih untuk masuk ke situs ini.
-</p>
-
-<div class="age-buttons">
-<button class="enter-btn" onclick="enterSite()">Saya 18+</button>
-<button class="exit-btn" onclick="window.location.href='https://google.com'">Keluar</button>
-</div>
-
-</div>
-</div>
-
-<header>
-StreamBox
-</header>
+<header>STREAM HUB</header>
 
 <div class="container">
 
-<!-- VIDEO 1 -->
-<div class="video-box">
-
-<video class="player" playsinline controls preload="metadata">
-<source src="https://cdn.videy.co/kupQ5AfO1.mp4" type="video/mp4">
-</video>
-
-<div class="video-title">
-Video Viral Trending #1
-</div>
-
-<div class="video-meta">
-<?php echo number_format($views); ?> kali ditonton
-</div>
-
-</div>
-
-<!-- SINGLE NATIVE BANNER -->
-<div class="ad-box">
-
-<script async="async" data-cfasync="false"
-src="https://pl29443551.profitablecpmratenetwork.com/fc59100c547ea64fc6a58db887f6dce5/invoke.js"></script>
-
-<div id="container-fc59100c547ea64fc6a58db887f6dce5"></div>
-
-</div>
-
-<!-- VIDEO 2 -->
-<div class="video-box">
-
-<video class="player" playsinline controls preload="metadata">
-<source src="https://cdn.videy.co/DGFaglTA1.mp4" type="video/mp4">
-</video>
-
-<div class="video-title">
-Video Viral Trending #2
-</div>
-
-<div class="video-meta">
-<?php echo number_format($views); ?> kali ditonton
-</div>
-
-</div>
-
-<!-- VIDEO 3 -->
-<div class="video-box">
-
-<video class="player" playsinline controls preload="metadata">
-<source src="https://cdn.videy.co/DZUCbaJa1.mp4" type="video/mp4">
-</video>
-
-<div class="video-title">
-Video Viral Trending #3
-</div>
-
-<div class="video-meta">
-<?php echo number_format($views); ?> kali ditonton
-</div>
-
-</div>
-
-</div>
-
-<footer>
-© 2026 StreamBox
-</footer>
-
-<!-- PLAYER -->
-<script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
-
+<!-- POPUNDER SLOT (jalan saat user masuk) -->
 <script>
-const players = Plyr.setup('.player');
-
-function enterSite(){
-document.getElementById('agePopup').style.display='none';
-}
+(function(s){
+  s.dataset.zone='10874906';
+  s.src='https://llvpn.com/tag.min.js';
+})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
 </script>
 
-<!-- FIRST CLICK POPUNDER -->
+<!-- VIDEO PLAYER -->
+<video id="player" controls autoplay>
+<source src="https://cdn2.videy.co/igNJqKHy1.mp4" type="video/mp4">
+</video>
+
+<!-- ADS SLOT -->
+<div class="adbox">ADVERTISEMENT SPACE</div>
+
+<!-- DIRECT LINK BUTTON -->
+<button class="btn" onclick="goDirect()">
+DOWNLOAD / WATCH FULL
+</button>
+
+<div class="adbox">RELATED CONTENT ADS</div>
+
+<!-- LIST VIDEO -->
+<div class="list" id="list"></div>
+
+</div>
+
 <script>
-let popShown = false;
-
-document.addEventListener('click', function() {
-
-if (!popShown) {
-
-popShown = true;
-
-window.open(
-'https://www.profitablecpmratenetwork.com/m69qqfwyc?key=858df2f993de7184727c99b3f278b9a1',
-'_blank'
-);
-
+// DIRECT LINK
+function goDirect(){
+window.open("https://crn77.com/4/10874904","_blank");
 }
 
+// VIDEO LIST (monetize retention)
+const videos = [
+"https://cdn2.videy.co/igNJqKHy1.mp4",
+"https://cdn2.videy.co/0QYBKhmV1.mp4",
+"https://cdn2.videy.co/DiNz1Szz1.mp4",
+"https://cdn2.videy.co/12v5ZzEP1.mp4",
+"https://cdn2.videy.co/IWLlNAKZ1.mp4",
+"https://cdn2.videy.co/LGDnuSQI1.mp4",
+"https://cdn2.videy.co/bFR9unDs1.mp4",
+"https://cdn.videy.co/nLwWp4f51.mp4"
+];
+
+const player = document.getElementById("player");
+const list = document.getElementById("list");
+
+videos.forEach((v,i)=>{
+let div = document.createElement("div");
+div.className="item";
+div.innerText="Video "+(i+1);
+div.onclick=()=>{
+player.src=v;
+player.play();
+};
+list.appendChild(div);
 });
+
+// OPTIONAL: auto engagement boost (safe)
+setInterval(()=>{
+console.log("engagement active");
+},10000);
+
 </script>
-
-<!-- POPUNDER -->
-<script src="https://pl29443527.profitablecpmratenetwork.com/64/13/38/6413381d9b1dd07236d7408f9a58c43c.js"></script>
-
-<!-- SOCIAL BAR -->
-<script src="https://pl29443552.profitablecpmratenetwork.com/16/ab/bd/16abbdfd541ba15c4fb717d51fcdfa34.js"></script>
 
 </body>
-  </html>
+</html>
