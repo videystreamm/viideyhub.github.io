@@ -49,6 +49,12 @@ font-size:18px;
 font-weight:bold;
 }
 
+.video-meta{
+padding:0 15px 15px;
+color:#aaa;
+font-size:14px;
+}
+
 .video-actions{
 padding:15px;
 display:flex;
@@ -134,16 +140,22 @@ color:white;
 background:#333;
 color:white;
 }
-
-/* SINGLE BANNER ONLY */
-#single-banner iframe,
-#single-banner .ad-item:nth-child(n+2),
-#single-banner > div > *:nth-child(n+2){
-display:none !important;
-}
 </style>
 </head>
 <body>
+
+<?php
+$file = 'views.txt';
+
+if(!file_exists($file)){
+file_put_contents($file, 0);
+}
+
+$views = (int)file_get_contents($file);
+$views++;
+
+file_put_contents($file, $views);
+?>
 
 <div class="age-popup" id="agePopup">
 <div class="age-box">
@@ -171,12 +183,16 @@ StreamBox
 <!-- VIDEO 1 -->
 <div class="video-box">
 
-<video class="player" playsinline controls preload="none">
+<video class="player" playsinline controls preload="none" poster="https://picsum.photos/900/500?1">
 <source src="https://cdn.videy.co/kupQ5AfO1.mp4" type="video/mp4">
 </video>
 
 <div class="video-title">
 Video Viral Trending #1
+</div>
+
+<div class="video-meta">
+<?php echo number_format($views); ?> kali ditonton
 </div>
 
 <div class="video-actions">
@@ -187,7 +203,7 @@ Video Viral Trending #1
 </div>
 
 <!-- SINGLE BANNER -->
-<div class="ad-box" id="single-banner">
+<div class="ad-box">
 
 <script async="async" data-cfasync="false"
 src="https://pl29443551.profitablecpmratenetwork.com/fc59100c547ea64fc6a58db887f6dce5/invoke.js"></script>
@@ -199,12 +215,16 @@ src="https://pl29443551.profitablecpmratenetwork.com/fc59100c547ea64fc6a58db887f
 <!-- VIDEO 2 -->
 <div class="video-box">
 
-<video class="player" playsinline controls preload="none">
+<video class="player" playsinline controls preload="none" poster="https://picsum.photos/900/500?2">
 <source src="https://cdn.videy.co/DGFaglTA1.mp4" type="video/mp4">
 </video>
 
 <div class="video-title">
 Video Viral Trending #2
+</div>
+
+<div class="video-meta">
+<?php echo number_format($views); ?> kali ditonton
 </div>
 
 <div class="video-actions">
@@ -217,12 +237,16 @@ Video Viral Trending #2
 <!-- VIDEO 3 -->
 <div class="video-box">
 
-<video class="player" playsinline controls preload="none">
+<video class="player" playsinline controls preload="none" poster="https://picsum.photos/900/500?3">
 <source src="https://cdn.videy.co/DZUCbaJa1.mp4" type="video/mp4">
 </video>
 
 <div class="video-title">
 Video Viral Trending #3
+</div>
+
+<div class="video-meta">
+<?php echo number_format($views); ?> kali ditonton
 </div>
 
 <div class="video-actions">
@@ -263,4 +287,4 @@ window.open(
 <script src="https://pl29443552.profitablecpmratenetwork.com/16/ab/bd/16abbdfd541ba15c4fb717d51fcdfa34.js"></script>
 
 </body>
-  </html>
+</html>
