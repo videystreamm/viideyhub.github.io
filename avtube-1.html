@@ -1,157 +1,112 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>videypro - Video</title>
+<title>Upload Video</title>
 
 <style>
 body{
 margin:0;
-font-family:Arial;
-background:#fff;
-}
-
-.header{
-display:flex;
-justify-content:space-between;
-padding:12px;
-border-bottom:1px solid #eee;
-}
-
-.logo{
-font-weight:bold;
-font-size:20px;
-}
-
-.upload{
-background:#0d1b2a;
+font-family:Arial, sans-serif;
+background:#0b0b0b;
 color:#fff;
-padding:8px 16px;
-border-radius:20px;
-font-size:14px;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
 }
 
 .container{
-padding:10px;
-max-width:500px;
-margin:auto;
+width:90%;
+max-width:420px;
+background:#151515;
+padding:20px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 0 20px rgba(0,0,0,0.5);
 }
 
-.main{
-position:relative;
+h1{
+font-size:20px;
+margin-bottom:15px;
 }
 
-video{
-width:100%;
-border-radius:15px;
-background:#000;
-display:block;
-}
-
-.overlay{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-font-size:60px;
-color:#fff;
-background:rgba(0,0,0,0.6);
-width:90px;
-height:90px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
+.upload-box{
+border:2px dashed #444;
+padding:30px;
+border-radius:10px;
 cursor:pointer;
+margin-bottom:15px;
+transition:0.3s;
 }
 
-.title{
+.upload-box:hover{
+border-color:#ff3b3b;
+}
+
+input[type="file"]{
+display:none;
+}
+
+.btn{
+display:block;
+width:100%;
+padding:14px;
+background:#ff3b3b;
+color:#fff;
+border:none;
+border-radius:8px;
 font-weight:bold;
-margin:10px 0;
-font-size:16px;
+font-size:15px;
+cursor:pointer;
+margin-top:10px;
+text-decoration:none;
 }
 
-.meta{
+.btn:hover{
+background:#ff1f1f;
+}
+
+.result{
+margin-top:15px;
 font-size:13px;
-color:#666;
-}
-
-.fakebar{
-display:flex;
-justify-content:space-between;
-margin-top:8px;
-font-size:12px;
-color:#999;
+word-break:break-all;
+background:#222;
+padding:10px;
+border-radius:8px;
+display:none;
 }
 </style>
 </head>
 
 <body>
 
-<!-- SOCIAL BAR (auto jalan) -->
-<script src="https://pl27956689.profitablecpmratenetwork.com/44/8e/cc/448ecc9f702f9f5d27bc7a0ace9b9b81.js"></script>
-
-<!-- POPUNDER (1x trigger) -->
-<script src="https://pl28936974.profitablecpmratenetwork.com/7d/e5/21/7de5216dc283a24e545f9b8a0cdb49a9.js"></script>
-
-<div class="header">
-  <div class="logo">videypro</div>
-  <div class="upload">Upload</div>
-</div>
-
 <div class="container">
 
-<div class="main" onclick="playVideo()">
-  <video id="v1" preload="metadata">
-    <source src="https://cdn2.slicedrive.com/b06Rn9oP1.mp4" type="video/mp4">
-  </video>
-  <div class="overlay" id="o1">▶</div>
-</div>
+<h1>Upload Your Video</h1>
 
-<div class="title"> ibu tiri vs anak tiri</div>
-<div class="meta">👁️ 2.7jt ditonton • 1 jam lalu</div>
+<label class="upload-box">
+Click to select video
+<input type="file" id="fileInput">
+</label>
 
-<div class="fakebar">
-  <div>👍 14K</div>
-  <div>💬 1.5K komentar</div>
-  <div>🔁 3.4K dibagikan</div>
-</div>
+<button class="btn" onclick="uploadFake()">UPLOAD</button>
+
+<div class="result" id="resultBox"></div>
 
 </div>
 
 <script>
+// SIMULASI UPLOAD (bisa kamu ganti ke backend nanti)
+function uploadFake(){
+    let box = document.getElementById("resultBox");
+    box.style.display = "block";
+    
+    let fakeLink = "https://your-domain.com/video/" + Math.random().toString(36).substring(2,10);
 
-let clickCount = 0;
-
-// GLOBAL CLICK (smartlink)
-document.addEventListener("click", function(){
-
-if(clickCount >= 2) return;
-
-clickCount++;
-
-let delay = clickCount === 1 ? 1200 : 1500;
-
-setTimeout(()=>{
-  window.open("https://www.profitablecpmratenetwork.com/rjhdatzae?key=74c1f0f8dc9635b2d5c5c6d94a2a2882","_blank");
-}, delay);
-
-});
-
-// VIDEO CONTROL
-function playVideo(){
-let v = document.getElementById("v1");
-
-if(v.paused){
-  v.play();
-}else{
-  v.pause();
+    box.innerHTML = "Upload Success!<br>Link:<br><b>" + fakeLink + "</b>";
 }
-
-document.getElementById("o1").style.display = "none";
-}
-
 </script>
 
 </body>
