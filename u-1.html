@@ -99,11 +99,13 @@ overflow:auto;
 
 .related-item{
 min-width:140px;
+cursor:pointer;
 }
 
-.related-item img{
+.related-item video{
 width:100%;
 border-radius:10px;
+background:#000;
 }
 
 .related-item p{
@@ -170,18 +172,18 @@ Nikmati pengalaman menonton cepat dan ringan di viideyhub.
 
 <div class="related-list">
 
-<div class="related-item">
-<img src="https://cdn.videy.co/tkENRJhA1.mp4">
+<div class="related-item" onclick="changeVideo('https://cdn2.slicedrive.com/NOCY5i661.mp4')">
+<video src="https://cdn2.slicedrive.com/NOCY5i661.mp4" muted playsinline></video>
 <p>Trending Viral 1</p>
 </div>
 
-<div class="related-item">
-<img src="https://cdn.videy.co/ChAGdJVY1.mp4">
+<div class="related-item" onclick="changeVideo('https://cdn2.slicedrive.com/NOCY5i661.mp4')">
+<video src="https://cdn2.slicedrive.com/NOCY5i661.mp4" muted playsinline></video>
 <p>Trending Viral 2</p>
 </div>
 
-<div class="related-item">
-<img src="https://cdn.videy.co/P0IKeIuz1.mp4">
+<div class="related-item" onclick="changeVideo('https://cdn2.slicedrive.com/NOCY5i661.mp4')">
+<video src="https://cdn2.slicedrive.com/NOCY5i661.mp4" muted playsinline></video>
 <p>Trending Viral 3</p>
 </div>
 
@@ -225,7 +227,19 @@ window.open("https://omg10.com/4/10888070","_blank");
 
 }
 
+function changeVideo(src){
+
+let v = document.getElementById("v1");
+
+v.src = src;
+
+v.play();
+
+document.getElementById("o1").style.display = "none";
+
+}
+
 </script>
 
 </body>
-</html>
+  </html>
