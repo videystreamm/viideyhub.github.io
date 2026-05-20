@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>viideyhub - Video</title>
+
+<style>
+body{margin:0;font-family:Arial;background:#fff;}
+.header{display:flex;justify-content:space-between;padding:12px;border-bottom:1px solid #eee;}
+.logo{font-weight:bold;font-size:20px;}
+.upload{background:#0d1b2a;color:#fff;padding:8px 16px;border-radius:20px;font-size:14px;}
+.container{padding:10px;}
+.main{position:relative;}
+video{width:100%;border-radius:15px;background:#000;}
+.overlay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+font-size:60px;color:#fff;background:rgba(0,0,0,0.5);
+width:80px;height:80px;display:flex;align-items:center;
+justify-content:center;border-radius:50%;cursor:pointer;}
+.related{margin-top:20px;}
+.related-list{display:flex;gap:10px;overflow:auto;}
+.related-item{min-width:140px;cursor:pointer;}
+.related-item video{width:100%;border-radius:10px;background:#000;}
+.related-item p{font-size:13px;margin-top:5px;}
+</style>
+</head>
+
+<body>
+
+<!-- POPUNDER -->
+<script>
+(function(s){
+s.dataset.zone='10879872',
+s.src='https://al5sm.com/tag.min.js'
+})
+([document.documentElement, document.body]
+.filter(Boolean)
+.pop()
+.appendChild(document.createElement('script')));
+</script>
+
+<div class="header">
+  <div class="logo">viideyhub</div>
+  <div class="upload">Upload</div>
+</div>
+
+<div class="container">
+
+<!-- VIDEO UTAMA -->
+<div class="main" onclick="playVideo()">
+  <video id="v1" playsinline></video>
+  <div class="overlay" id="o1">▶</div>
+</div>
+
+<!-- RELATED -->
+<div class="related">
+<h3>Video Lainnya</h3>
+<div class="related-list" id="list"></div>
+</div>
+
+</div>
+
+<script>
+
+// =======================
+// 5 VIDEO LIST
+// =======================
+const videos = [
+  "https://cdn.videy.co/Y7cHiXdK1.mp4",
+  "https://cdn.videy.co/qIVBEiRg1.mp4",
+  "https://cdn.videy.co/w1zhPtbo1.mp4",
+  "https://cdn.videy.co/q1xn9c9E1.mp4",
+  "https://cdn.videy.co/XA3rhe0X1.mp4"
+];
+
+let clicked = false;
+
+// =======================
+// LOAD RANDOM VIDEO
+// =======================
+function loadRandom(){
+  let i = Math.floor(Math.random() * videos.length);
+  let v = document.getElementById("v1");
+  v.src = videos[i];
+  v.play();
+  document.getElementById("o1").style.display = "none";
+}
+
+// =======================
+// PLAY VIDEO + POPUNDER
+// =======================
+function playVideo(){
+  let v = document.getElementById("v1");
+  v.play();
+  document.getElementById("o1").style.display = "none";
+
+  if(!clicked){
+    clicked = true;
+
+    setTimeout(()=>{
+      window.open("https://omg10.com/4/10888070","_blank");
+    }, 3000);
+  }
+}
+
+// =======================
+// AUTO NEXT VIDEO
+// =======================
+document.getElementById("v1").addEventListener("ended", () => {
+  let next = Math.floor(Math.random() * videos.length);
+  document.getElementById("v1").src = videos[next];
+  document.getElementById("v1").play();
+
+  // extra monetization trigger
+  setTimeout(()=>{
+    window.open("https://omg10.com/4/10888070","_blank");
+  }, 4000);
+});
+
+// =======================
+// RELATED RANDOM
+// =======================
+function renderRelated(){
+  let list = document.getElementById("list");
+  list.innerHTML = "";
+
+  let shuffled = [...videos].sort(() => Math.random() - 0.5);
+
+  shuffled.forEach(v => {
+    let div = document.createElement("div");
+    div.className = "related-item";
+
+    div.innerHTML = `
+      <video src="${v}" muted playsinline></video>
+      <p>Trending Viral</p>
+    `;
+
+    div.onclick = () => {
+      document.getElementById("v1").src = v;
+      document.getElementById("v1").play();
+      document.getElementById("o1").style.display = "none";
+    };
+
+    list.appendChild(div);
+  });
+}
+
+// init
+loadRandom();
+renderRelated();
+
+</script>
+
+</body>
+  </html>
